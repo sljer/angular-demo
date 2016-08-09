@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8">
+    <script type="text/javascript" src="http://chongqing.sinaimg.cn/images/thyxq/jquery.1.11.2.min.js" charset="utf-8"></script>
+</head>
+
+
+<body class="Vbody" style="background: #000;">
+
+
+
+
+    <script>
+    var musicurl = 'http://chongqing.sinaimg.cn/images/Animal/zhop.mp3';
+    var musicobj = {
+        removeshow: function() {
+            musictime = setTimeout(function() {
+                $('#radmark').removeClass('radmark-show');
+                clearTimeout(musictime);
+            }, 1000);
+        },
+        init: function() {
+            $(document.body).append('<div id="audiobox"><span id="radmark" class=""></span><p class="icon-music" id="start"></p><audio id="theaudio" loop="loop" autoplay="autoplay" src="' + musicurl + '"></audio></div>');
+            $('#start').addClass('rotate');
+        },
+        musicplay: function() {
+            if (audio.paused) {
+                audio.play();
+                $('#start').addClass('rotate');
+                $('#radmark').addClass('radmark-show').html('播放');
+                musicobj.removeshow();
+
+            } else {
+                audio.pause();
+                $('#start').removeClass('rotate');
+                $('#radmark').addClass('radmark-show');
+                $('#radmark').html('暂停');
+                musicobj.removeshow();
+
+            }
+        }
+    }
+    musicobj.init();
+    var audio = document.getElementById('theaudio');
+    $('#start').bind('click', function() {
+        musicobj.musicplay();
+    });
+    </script>
+    <link href="http://chongqing.sinaimg.cn/css/music_v1.css" type="text/css" rel="stylesheet">
+</body>
+
+</html>
