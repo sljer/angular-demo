@@ -18,4 +18,4 @@ var myApp = angular.module('myApp', [])
 
     .controller('firstController', ['$scope', function ($scope) {
         $scope.name = '张三';
-    }]);
+    }]);  
