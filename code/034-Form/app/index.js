@@ -7,7 +7,7 @@ angular.module('myApp', [])
                 if (obj.parent === parent) {
                     filterData.push(obj);
                 }
-            })
+            }) 
 
             return filterData;
         }
