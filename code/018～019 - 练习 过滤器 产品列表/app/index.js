@@ -16,7 +16,7 @@
                 id:980,
                 name:'imac',
                 price : 15400
-            },
+            },     
             {
                 id:1212,
                 name:'ipad air',
